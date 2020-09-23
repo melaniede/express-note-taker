@@ -26,4 +26,20 @@ module.exports = function (app) {
             });
         });
     });
-}
+
+    // Delete route for deleting notes
+    app.delete("/api/notes/:id", (req, res) => {
+        let id = req.params.id;
+        fs.readFile("./db/db.json", (err, data) => {
+            if (err) throw err;
+            let note = JSON.parse(data);
+            let noteArr = note.filter((notes) => {
+                return id !== notes.id;
+            })
+            fs.writeFile("./db/db.json", JSON.stringify(noteArr), (err) => {
+                if (err) throw err;
+                res.json(noteArr);
+            });
+        });
+    });
+    }
