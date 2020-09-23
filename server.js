@@ -11,6 +11,9 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Sets up the Express app to serve static files
+app.use(express.static('public'))
+
 // ROUTER
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);

@@ -3,11 +3,27 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = function (app) {
 
-    // GET Request
+    // Get route for retrieving note
     app.get("/api/notes", (req, res) => {
         fs.readFile("./db/db.json", (err, data) => {
             if (err) throw err;
             res.json(JSON.parse(data));
+        });
+    });
+
+
+    // Post route for new note
+    app.post("/api/notes", (req, res) => {
+        let newNote = req.body;
+        newNote.id = uuidv4();
+        fs.readFile("./db/db.json", (err, data) => {
+            if (err) throw err;
+            let note = JSON.parse(data);
+            note.push(newNote);
+            fs.writeFile("./db/db.json", JSON.stringify(note), (err) => {
+                if (err) throw err;
+                res.json(note);
+            });
         });
     });
 }
