@@ -11,7 +11,6 @@ module.exports = function (app) {
         });
     });
 
-
     // Post route for new note
     app.post("/api/notes", (req, res) => {
         let newNote = req.body;
@@ -42,4 +41,4 @@ module.exports = function (app) {
             });
         });
     });
-    }
+}
