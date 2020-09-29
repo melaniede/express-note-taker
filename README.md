@@ -7,10 +7,10 @@ Use Note Taker to quickly create notes and save them for easy access. Once you'r
 Create your first note with the note taker application now! [Link to app in Heroku](https://afternoon-taiga-69723.herokuapp.com/).
 
 ## Note Taker Homepage
-<img src="public/assets/images/Note_Taker_Home.png" width = "600">
+<img src="public/assets/images/Note_Taker_Home.png">
 
 ## Note Taker Note Creation
-<img src="public/assets/images/Note_Taker_List.png" width = "600">
+<img src="public/assets/images/Note_Taker_List.png">
 Easily create a new note and save it. All new notes appear on the left of the page sorted by oldest to newest. To delete a note once you're complete, hit the trash icon. 
 
 ### User Story
